@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/anas_background">
+
+<View android:layout_width="0dp" android:layout_height="320dp" android:background="@drawable/bg_holo_glow_top" app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" />
+
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/dashboardScroll"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:clipToPadding="false"
+    android:overScrollMode="never"
+    android:paddingBottom="96dp"
+    android:scrollbars="none"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingStart="14dp" android:paddingEnd="14dp" android:paddingTop="14dp" android:paddingBottom="24dp">
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="76dp">
+<ImageView android:id="@+id/ivAnasLogo" android:layout_width="54dp" android:layout_height="54dp" android:src="@drawable/ic_anas_ai_logo" android:contentDescription="ANAS AI" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
+<LinearLayout android:id="@+id/boxJarvisTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="10dp" android:orientation="vertical" android:clickable="true" android:focusable="true" app:layout_constraintStart_toEndOf="@id/ivAnasLogo" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+<TextView android:id="@+id/tvJarvisTitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/jarvis_title" android:textColor="@color/anas_text_primary" android:textSize="21sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.1" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="PERSONAL AI SYSTEM" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  android:letterSpacing="0.15" />
+<LinearLayout android:id="@+id/boxConnectionStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:gravity="center_vertical" android:orientation="horizontal">
+<View android:id="@+id/viewStatusDot" android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_power_button" android:backgroundTint="@color/status_green" />
+<TextView android:id="@+id/tvConnectionStatus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:text="@string/status_ready" android:textColor="@color/anas_success" android:textSize="10sp" android:textStyle="bold" android:letterSpacing="0.1" />
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+<ImageButton android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_hud_circle" android:src="@drawable/ic_search" android:padding="10dp" android:contentDescription="Search" app:tint="@color/anas_cyan" />
+<FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="6dp">
+<ImageButton android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_hud_circle" android:src="@drawable/ic_notification" android:padding="10dp" android:contentDescription="Notifications" app:tint="@color/anas_text_primary" />
+<View android:layout_width="8dp" android:layout_height="8dp" android:layout_gravity="top|end" android:layout_marginTop="2dp" android:layout_marginEnd="2dp" android:background="@drawable/bg_notification_dot" />
+</FrameLayout>
+<ImageButton android:id="@+id/btnSettings" android:layout_width="40dp" android:layout_height="40dp" android:layout_marginStart="6dp" android:background="@drawable/bg_hud_circle" android:src="@drawable/ic_settings" android:padding="10dp" android:contentDescription="@string/settings_title" app:tint="@color/anas_text_primary" />
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SYSTEM STATUS" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  android:letterSpacing="0.08" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CPU" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="23%" android:textColor="@color/anas_text_primary" android:textSize="15sp"
+            android:textStyle="bold"  />
+<ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="3dp" android:max="100" android:progress="23" android:progressTint="@color/anas_cyan" android:progressBackgroundTint="@color/anas_progress_background" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="RAM" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3.8 GB" android:textColor="@color/anas_text_primary" android:textSize="15sp"
+            android:textStyle="bold"  />
+<ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="3dp" android:max="100" android:progress="48" android:progressTint="@color/anas_violet" android:progressBackgroundTint="@color/anas_progress_background" />
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="STORAGE" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="65%" android:textColor="@color/anas_text_primary" android:textSize="15sp"
+            android:textStyle="bold"  />
+<ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="3dp" android:max="100" android:progress="65" android:progressTint="@color/anas_cyan" android:progressBackgroundTint="@color/anas_progress_background" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TEMP" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="32°C" android:textColor="@color/anas_text_primary" android:textSize="15sp"
+            android:textStyle="bold"  />
+<ProgressBar style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="4dp" android:layout_marginTop="3dp" android:max="100" android:progress="40" android:progressTint="@color/anas_warning" android:progressBackgroundTint="@color/anas_progress_background" />
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" >
+<TextView android:id="@+id/dateText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SUN, 29 SEP 2026" android:textColor="@color/anas_text_secondary" android:textSize="9sp" android:letterSpacing="0.05" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:orientation="horizontal">
+<TextView android:id="@+id/tvLiveTime" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="@color/anas_text_primary" android:textSize="22sp" android:textStyle="bold" tools:text="09:41" />
+<ImageView android:layout_width="26dp" android:layout_height="26dp" android:src="@drawable/ic_moon" app:tint="@color/anas_violet"  />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Khulna, Bangladesh" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="28°C  •  Clear Sky" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  android:layout_marginTop="2dp" />
+</LinearLayout>
+</LinearLayout>
+<FrameLayout android:layout_width="280dp" android:layout_height="280dp" android:layout_gravity="center_horizontal" android:layout_marginTop="12dp">
+<View android:layout_width="280dp" android:layout_height="280dp" android:layout_gravity="center" android:background="@drawable/bg_ai_ring_outer" />
+<View android:layout_width="250dp" android:layout_height="250dp" android:layout_gravity="center" android:background="@drawable/bg_ai_ring_inner" />
+<FrameLayout android:id="@+id/orbContainer" android:layout_width="220dp" android:layout_height="220dp" android:layout_gravity="center" android:padding="6dp" android:background="@drawable/bg_ai_orb_frame">
+<WebView android:id="@+id/webViewOrb" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@android:color/transparent" />
+</FrameLayout>
+</FrameLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginTop="6dp">
+<TextView android:id="@+id/tvConversationState" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:text="@string/state_idle" android:textColor="@color/anas_cyan" android:textSize="24sp" android:textStyle="bold" android:fontFamily="sans-serif-black" android:letterSpacing="0.18" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="How can I help you today?" android:textColor="@color/anas_text_primary" android:textSize="13sp"  android:layout_gravity="center_horizontal" android:layout_marginTop="2dp" />
+<TextView android:id="@+id/tvPersonalityMode" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="4dp" android:text="Assistant Mode" android:textColor="@color/anas_text_secondary" android:textSize="10sp" android:letterSpacing="0.08" />
+<ImageView android:layout_width="22dp" android:layout_height="22dp" android:src="@drawable/ic_waveform" app:tint="@color/anas_cyan"  android:layout_gravity="center_horizontal" android:layout_marginTop="4dp" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginEnd="8dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✦ REAL-TIME LISTENING" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:gravity="center_vertical" android:orientation="horizontal">
+<ImageView android:layout_width="40dp" android:layout_height="40dp" android:src="@drawable/ic_ai_head" app:tint="@color/anas_cyan"  />
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:src="@drawable/ic_waveform" app:tint="@color/anas_cyan"  android:layout_marginStart="8dp" />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Waiting for your command..." android:textColor="@color/anas_text_secondary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout>
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel_violet" >
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✦ AI THINKING" android:textColor="@color/anas_violet" android:textSize="10sp"
+            android:textStyle="bold"  />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:orientation="horizontal">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_ai_thinking" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="• Natural Language&#10;• Screen Understanding&#10;• Task Planning&#10;• Executing Actions" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  android:layout_marginStart="8dp" android:lineSpacingExtra="2dp" />
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginTop="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AI CAPABILITIES" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  android:letterSpacing="0.05" />
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_brain" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Language" android:textColor="@color/anas_text_primary" android:textSize="9sp"  android:layout_marginTop="4dp" android:gravity="center" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_vision" app:tint="@color/anas_cyan"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Vision" android:textColor="@color/anas_text_primary" android:textSize="9sp"  android:layout_marginTop="4dp" android:gravity="center" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_automation" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automation" android:textColor="@color/anas_text_primary" android:textSize="9sp"  android:layout_marginTop="4dp" android:gravity="center" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_system_control" app:tint="@color/anas_cyan"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Control" android:textColor="@color/anas_text_primary" android:textSize="9sp"  android:layout_marginTop="4dp" android:gravity="center" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_cloud" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cloud AI" android:textColor="@color/anas_text_primary" android:textSize="9sp"  android:layout_marginTop="4dp" android:gravity="center" />
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="14dp" android:gravity="center" android:orientation="horizontal">
+<ImageButton android:id="@+id/btnMicMute" android:layout_width="52dp" android:layout_height="52dp" android:layout_marginEnd="4dp" android:background="@drawable/bg_control_button" android:src="@drawable/ic_mic" android:contentDescription="Mute or Unmute Mic" app:tint="@color/primary_cyan" />
+<LinearLayout android:id="@+id/modeText" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:gravity="center" android:background="@drawable/bg_mode_button"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_keyboard" app:tint="@color/anas_violet"  /></LinearLayout>
+<LinearLayout android:id="@+id/btnPowerSession" android:layout_width="84dp" android:layout_height="84dp" android:layout_marginStart="6dp" android:layout_marginEnd="6dp" android:background="@drawable/bg_power_button_off" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+<ImageView android:id="@+id/ivPowerIcon" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/ic_power" app:tint="@color/text_muted" />
+<TextView android:id="@+id/tvPowerText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="@string/btn_off" android:textColor="@color/text_muted" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.1" />
+</LinearLayout>
+<LinearLayout android:id="@+id/modeCamera" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:gravity="center" android:background="@drawable/bg_mode_button"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_camera" app:tint="@color/anas_violet"  /></LinearLayout><LinearLayout android:id="@+id/modeScreen" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginStart="4dp" android:layout_marginEnd="4dp" android:gravity="center" android:background="@drawable/bg_mode_button"><ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_screen" app:tint="@color/anas_cyan"  /></LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginTop="14dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+<TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="⚡  QUICK ACTIONS" android:textColor="@color/anas_text_primary" android:textSize="12sp" android:textStyle="bold" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="See All  ›" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  />
+</LinearLayout>
+<HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:overScrollMode="never" android:scrollbars="none">
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+<LinearLayout android:id="@+id/actionOpenApps" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_blue">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_apps" app:tint="@color/anas_cyan"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Apps" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout><LinearLayout android:id="@+id/actionWifi" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_green">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_wifi" app:tint="@color/anas_success"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wi-Fi" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ON" android:textColor="@color/anas_success" android:textSize="9sp"
+            android:textStyle="bold"  />
+</LinearLayout><LinearLayout android:id="@+id/actionBluetooth" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_blue">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_bluetooth" app:tint="@color/anas_cyan"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bluetooth" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="OFF" android:textColor="@color/anas_cyan" android:textSize="9sp"
+            android:textStyle="bold"  />
+</LinearLayout><LinearLayout android:id="@+id/actionCamera" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_purple">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_camera" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Camera" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout><LinearLayout android:id="@+id/actionFlashlight" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_orange">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_flashlight" app:tint="@color/anas_warning"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Flashlight" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout><LinearLayout android:id="@+id/actionMusic" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_magenta">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_music" app:tint="@color/anas_magenta"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Music" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout><LinearLayout android:id="@+id/actionLocation" android:layout_width="86dp" android:layout_height="100dp" android:layout_marginEnd="8dp" android:gravity="center" android:orientation="vertical" android:background="@drawable/bg_action_purple">
+<ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_location" app:tint="@color/anas_violet"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Location" android:textColor="@color/anas_text_primary" android:textSize="10sp"  android:layout_marginTop="8dp" />
+</LinearLayout>
+</LinearLayout>
+</HorizontalScrollView>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel" android:layout_marginTop="12dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+<TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="◷  RECENT ACTIVITY" android:textColor="@color/anas_text_primary" android:textSize="12sp" android:textStyle="bold" />
+<TextView android:id="@+id/tvViewHistory" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="4dp" android:text="See All ›" android:textColor="@color/anas_cyan" android:textSize="11sp" android:textStyle="bold" android:clickable="true" android:focusable="true" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_youtube"  />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Opened YouTube" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="App launched successfully" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2m ago" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_wifi" app:tint="@color/anas_cyan" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Turned on Wi-Fi" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Connected to Home Network" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10m ago" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_automation" app:tint="@color/anas_success" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ran Morning Routine" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3/3 actions completed" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1h ago" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_image" app:tint="@color/anas_violet" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Captured Screenshot" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Saved to Gallery" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2h ago" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp" android:background="@drawable/bg_holo_panel_violet" android:layout_marginTop="12dp">
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+<TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="✦ AI SUGGESTIONS" android:textColor="@color/anas_violet" android:textSize="12sp" android:textStyle="bold" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="See All ›" android:textColor="@color/anas_cyan" android:textSize="11sp"
+            android:textStyle="bold"  />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_battery" app:tint="@color/anas_warning" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enable Battery Saver" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Battery at 20%" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="60dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_suggestion_button" android:text="Enable" android:textColor="@color/anas_cyan" android:textSize="10sp" android:textStyle="bold" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_automation" app:tint="@color/anas_violet" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Create Automation" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Turn on Wi-Fi at home" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="60dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_suggestion_button" android:text="Create" android:textColor="@color/anas_violet" android:textSize="10sp" android:textStyle="bold" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_apps" app:tint="@color/anas_cyan" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Open Frequently Used" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="YouTube, Chrome, WhatsApp" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="60dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_suggestion_button" android:text="Open" android:textColor="@color/anas_cyan" android:textSize="10sp" android:textStyle="bold" />
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center_vertical" android:layout_marginTop="10dp">
+<ImageView android:layout_width="38dp" android:layout_height="38dp" android:padding="8dp" android:background="@drawable/bg_activity_icon" android:src="@drawable/ic_cloud" app:tint="@color/anas_cyan" />
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginStart="10dp">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check Today's Weather" android:textColor="@color/anas_text_primary" android:textSize="12sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Khulna • 28°C" android:textColor="@color/anas_text_secondary" android:textSize="10sp"  />
+</LinearLayout>
+<TextView android:layout_width="60dp" android:layout_height="30dp" android:gravity="center" android:background="@drawable/bg_suggestion_button" android:text="View" android:textColor="@color/anas_cyan" android:textSize="10sp" android:textStyle="bold" />
+</LinearLayout>
+</LinearLayout>
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:orientation="horizontal">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="108dp" android:layout_marginEnd="6dp" android:orientation="vertical" android:gravity="center_vertical" android:padding="10dp" android:background="@drawable/bg_feature_card">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SMART AUTOMATIONS" android:textColor="@color/anas_magenta" android:textSize="10sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automate your daily tasks using AI" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  android:layout_marginTop="6dp" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→" android:textColor="@color/anas_cyan" android:textSize="18sp"
+            android:textStyle="bold"  android:layout_marginTop="4dp" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="108dp" android:layout_marginEnd="6dp" android:orientation="vertical" android:gravity="center_vertical" android:padding="10dp" android:background="@drawable/bg_feature_card">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AI TOOLS" android:textColor="@color/anas_cyan" android:textSize="10sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Powerful tools at your fingertips" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  android:layout_marginTop="6dp" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→" android:textColor="@color/anas_violet" android:textSize="18sp"
+            android:textStyle="bold"  android:layout_marginTop="4dp" />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="108dp" android:layout_marginEnd="6dp" android:orientation="vertical" android:gravity="center_vertical" android:padding="10dp" android:background="@drawable/bg_feature_card">
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SYSTEM CONTROL" android:textColor="@color/anas_violet" android:textSize="10sp"
+            android:textStyle="bold"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Control your device with AI" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  android:layout_marginTop="6dp" />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→" android:textColor="@color/anas_cyan" android:textSize="18sp"
+            android:textStyle="bold"  android:layout_marginTop="4dp" />
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+<LinearLayout android:id="@+id/bottomNavigation" android:layout_width="0dp" android:layout_height="68dp" android:layout_marginStart="10dp" android:layout_marginEnd="10dp" android:layout_marginBottom="10dp" android:paddingStart="6dp" android:paddingEnd="6dp" android:gravity="center_vertical" android:orientation="horizontal" android:elevation="16dp" android:background="@drawable/bg_bottom_bar" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="58dp" android:orientation="vertical" android:gravity="center" android:background="@drawable/bg_nav_selected">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" app:tint="@color/anas_cyan"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Home" android:textColor="@color/anas_text_primary" android:textSize="9sp"  />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="58dp" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_chat" app:tint="@color/anas_text_primary"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Assistant" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+<FrameLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="64dp"><FrameLayout android:layout_width="60dp" android:layout_height="60dp" android:layout_gravity="center" android:background="@drawable/bg_nav_ai_core"><ImageView android:layout_width="38dp" android:layout_height="38dp" android:layout_gravity="center" android:src="@drawable/ic_anas_ai_logo" android:contentDescription="ANAS AI" /></FrameLayout></FrameLayout>
+<LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="58dp" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_automation" app:tint="@color/anas_text_primary"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Automations" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="58dp" android:orientation="vertical" android:gravity="center">
+<ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_tools" app:tint="@color/anas_text_primary"  />
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tools" android:textColor="@color/anas_text_secondary" android:textSize="9sp"  />
+</LinearLayout>
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
